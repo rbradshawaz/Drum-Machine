@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 const Drumpad = ({setDisplayText, textToDisplay, keyCharacter, src}) => {
 
     const [active, setActive] = useState(false); //tracks whether the particular drumpad has been activated for styling
-    let player = new Audio(src);
+    let player = new Audio(src); //create the HTML Audio object in a way easy to use
     player.id = keyCharacter;
 
     const playSound = () => {
