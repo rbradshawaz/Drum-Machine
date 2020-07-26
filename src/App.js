@@ -1,24 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Drumpad from './components/Drumpad';
 
 function App() {
+  const [displayText, setDisplayText] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2 id="display">{displayText}</h2>
+      <Drumpad setDisplayText={setDisplayText} textToDisplay='Dry_Ohh' src='https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3' keyCharacter = 'Q' />
     </div>
   );
 }
